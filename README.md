@@ -84,12 +84,6 @@ docker build -t fastapi-task-manager .
 docker run -p 8000:8000 --env-file .env fastapi-task-manager
 ```
 
-## Deployment Notes
-
-- Public GitHub repository link: add your repo URL after pushing this project
-- Live deployment link: add your Render, Railway, or similar deployed URL after deployment
-- Recommended start command: `uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT`
-
 ## API Examples
 
 ### Register
