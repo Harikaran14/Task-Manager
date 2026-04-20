@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FastAPI Task Manager</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div>
+          <p class="eyebrow">Python Developer Intern Task</p>
+          <h1>FastAPI Task Manager</h1>
+          <p class="hero-copy">
+            Register, log in, create tasks, mark them complete, filter them, and delete them from one simple interface.
+          </p>
+        </div>
+        <div class="status-card">
+          <span class="status-dot"></span>
+          <div>
+            <p class="status-label">API status</p>
+            <p id="health-status">Checking...</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="layout">
+        <section class="panel auth-panel">
+          <div class="panel-header">
+            <h2>Account</h2>
+            <button id="logout-btn" class="ghost-button" hidden>Logout</button>
+          </div>
+
+          <div class="auth-grid">
+            <form id="register-form" class="card">
+              <h3>Register</h3>
+              <label>
+                Name
+                <input type="text" id="register-name" placeholder="Hari" required />
+              </label>
+              <label>
+                Email
+                <input type="email" id="register-email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Password
+                <input type="password" id="register-password" placeholder="Minimum 6 characters" required />
+              </label>
+              <button type="submit">Create account</button>
+            </form>
+
+            <form id="login-form" class="card">
+              <h3>Login</h3>
+              <label>
+                Email
+                <input type="email" id="login-email" placeholder="you@example.com" required />
+              </label>
+              <label>
+                Password
+                <input type="password" id="login-password" placeholder="Your password" required />
+              </label>
+              <button type="submit">Login</button>
+            </form>
+          </div>
+
+          <div class="user-summary" id="user-summary">
+            <p>Not logged in.</p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-header">
+            <h2>Tasks</h2>
+            <button id="refresh-btn" class="ghost-button">Refresh</button>
+          </div>
+
+          <form id="task-form" class="card task-form">
+            <h3>Create Task</h3>
+            <label>
+              Title
+              <input type="text" id="task-title" placeholder="Ship the FastAPI backend" required />
+            </label>
+            <label>
+              Description
+              <textarea id="task-description" rows="4" placeholder="Add a few useful details"></textarea>
+            </label>
+            <button type="submit">Add task</button>
+          </form>
+
+          <div class="toolbar">
+            <label>
+              Filter
+              <select id="filter-status">
+                <option value="all">All tasks</option>
+                <option value="completed">Completed</option>
+                <option value="pending">Pending</option>
+              </select>
+            </label>
+            <label>
+              Page size
+              <select id="page-size">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="20">20</option>
+              </select>
+            </label>
+          </div>
+
+          <div id="message-box" class="message-box" hidden></div>
+          <div id="tasks-container" class="tasks-container"></div>
+
+          <div class="pagination">
+            <button id="prev-page" class="ghost-button">Previous</button>
+            <span id="page-indicator">Page 1</span>
+            <button id="next-page" class="ghost-button">Next</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
