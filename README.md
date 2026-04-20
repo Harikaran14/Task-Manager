@@ -1,34 +1,4 @@
-# FastAPI Task Manager
-
-This project converts the original MERN task manager backend into a Python-based submission that matches the internship PDF requirements. It includes:
-
-- A FastAPI backend with JWT authentication
-- SQLite with SQLAlchemy models
-- A basic responsive frontend built with plain HTML, CSS, and JavaScript
-- Task CRUD with per-user access control
-- Pagination and filtering for task lists
-- Pytest test coverage
-- Docker support
-
-## Project Structure
-
-```text
-pythontaskmanager/
-├── backend/
-│   ├── app/
-│   │   ├── core/
-│   │   ├── db/
-│   │   ├── models/
-│   │   ├── routers/
-│   │   ├── schemas/
-│   │   └── main.py
-│   └── tests/
-├── frontend/
-├── .env.example
-├── Dockerfile
-├── README.md
-└── requirements.txt
-```
+Link: https://task-manager-ogvp.onrender.com/
 
 ## Features
 
